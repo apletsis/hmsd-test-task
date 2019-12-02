@@ -1,5 +1,33 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Firebase deploy
+
+You need to create a new project in [firebase console](https://console.firebase.google.com/)
+
+### Step 1: Install the Firebase CLI and build react app
+
+Run `npm run build`.
+Visit the Firebase CLI documentation to learn how to install the CLI or update to its latest version.
+If you want to skip docs install firebase-cli with `npm install -g firebase-tools`
+
+### Step 2: Login and initialize your project
+
+Sign in to your google account
+`firebase login`
+
+To connect your local project to your Firebase project, run the following command from the root of your local project directory:
+`firebase init` and follow cli steps.
+
+### Step 3: Deploy to your site
+
+To deploy to your site, run the following command from the root of your local project directory:
+`firebase deploy`
+
+This command deploys a release to your Firebase project's default Hosting sites:
+
+- projectID.web.app
+- projectID.firebaseapp.com
+
 ## Available Scripts
 
 In the project directory, you can run:
