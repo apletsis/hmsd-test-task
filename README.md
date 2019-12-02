@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## API
+To fetch data was used [AccuWeather App](https://developer.accuweather.com/)
+
 ## Firebase deploy
 
 You need to create a new project in [firebase console](https://console.firebase.google.com/)

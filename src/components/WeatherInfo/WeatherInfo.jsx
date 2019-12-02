@@ -11,12 +11,12 @@ class WeatherInfo extends Component {
 
   temperatureHue = {
     min: 180,   // #00ffff
-    mid: 58,    // #fff700
+    middle: 58, // #fff700
     max: 33,    // #ff8c00
   };
 
   inputMaxRange = 30;
-  inputMidRange = 10;
+  inputMiddleRange = 10;
   inputMinRange = -10;
 
   state = {
@@ -61,7 +61,7 @@ class WeatherInfo extends Component {
 
   calculateHue = (temperature) => {
     const minHue = this.temperatureHue.min;
-    const midHue = this.temperatureHue.mid;
+    const middleHue = this.temperatureHue.middle;
     const maxHue = this.temperatureHue.max;
 
     if(temperature <= this.inputMinRange) {
@@ -70,10 +70,10 @@ class WeatherInfo extends Component {
       return maxHue;
     } else if(temperature > this.inputMinRange && temperature <= this.inputMiddleRange) {
       const tempKoef = (temperature - this.inputMinRange)/(this.inputMiddleRange - this.inputMinRange);
-      return minHue + (midHue - minHue) * tempKoef;
+      return minHue + (middleHue - minHue) * tempKoef;
     } else if(temperature > this.inputMiddleRange && temperature <= this.inputMaxRange) {
       const tempKoef = (temperature - this.inputMiddleRange)/(this.inputMaxRange - this.inputMiddleRange);
-      return midHue + (maxHue - midHue) * tempKoef;
+      return middleHue + (maxHue - middleHue) * tempKoef;
     }
   }
 
@@ -110,6 +110,9 @@ class WeatherInfo extends Component {
             <img className={'weather_icon'} src={iconPath} alt={imgAlt} />
           </div>
           <div className={'slider_container'}>
+            {/* { console.log(this.props.coords.latitude, this.props.coords.longitude) } */}
+            {/* { console.log(WeatherService.geopositionSearch(this.props.coords.latitude, this.props.coords.longitude)) } */}
+            {/* { console.log(WeatherService.currentCondition(326514)) } */}
             <InputRange
               maxValue={this.inputMaxRange}
               minValue={this.inputMinRange}
