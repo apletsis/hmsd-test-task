@@ -3,6 +3,9 @@
 #vs code extensions
 .history
 
+#env
+.env
+
 # dependencies
 /node_modules
 /.pnp
